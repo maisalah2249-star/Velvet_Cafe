@@ -1,0 +1,82 @@
+<nav class="navbar">
+
+  <div class="container nav-container">
+
+    <a href="#home" class="logo">
+      <span>Velvet</span> Café
+    </a>
+
+    <div class="desktop-links">
+
+      <a href="#home">Home</a>
+
+      <a href="#menu">Menu</a>
+
+      <a href="#about">About</a>
+
+      <a href="#reviews">Reviews</a>
+
+      <a href="#contact">Contact</a>
+
+      <button
+        class="theme-button"
+        (click)="themeService.toggleTheme()"
+      >
+        {{ themeService.darkMode() ? '☀' : '☾' }}
+      </button>
+
+      <a href="#contact" class="nav-button">
+        Visit Us
+      </a>
+
+    </div>
+
+    <div class="mobile-actions">
+
+      <button
+        class="theme-button"
+        (click)="themeService.toggleTheme()"
+      >
+        {{ themeService.darkMode() ? '☀' : '☾' }}
+      </button>
+
+      <button
+        class="menu-button"
+        (click)="toggleMenu()"
+      >
+        ☰
+      </button>
+
+    </div>
+
+  </div>
+
+  @if (mobileMenu()) {
+
+    <div class="mobile-menu">
+
+      <a href="#home" (click)="closeMenu()">
+        Home
+      </a>
+
+      <a href="#menu" (click)="closeMenu()">
+        Menu
+      </a>
+
+      <a href="#about" (click)="closeMenu()">
+        About
+      </a>
+
+      <a href="#reviews" (click)="closeMenu()">
+        Reviews
+      </a>
+
+      <a href="#contact" (click)="closeMenu()">
+        Contact
+      </a>
+
+    </div>
+
+  }
+
+</nav>

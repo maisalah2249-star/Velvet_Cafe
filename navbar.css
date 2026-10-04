@@ -1,0 +1,90 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--background);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-container {
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.desktop-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.desktop-links a {
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.desktop-links a:hover {
+  color: var(--primary);
+}
+
+.theme-button,
+.menu-button {
+  border: none;
+  background: transparent;
+  color: var(--text);
+  font-size: 20px;
+}
+
+.nav-button {
+  background: var(--primary);
+  color: white !important;
+  padding: 11px 18px;
+  border-radius: 8px;
+}
+
+.mobile-actions,
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 800px) {
+
+  .desktop-links {
+    display: none;
+  }
+
+  .mobile-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .menu-button {
+    font-size: 25px;
+  }
+
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 18px;
+    border-top: 1px solid var(--border);
+    background: var(--background);
+  }
+
+  .mobile-menu a {
+    font-weight: 500;
+  }
+}

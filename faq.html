@@ -1,0 +1,62 @@
+<section class="section" id="faq">
+
+  <div class="container faq-container">
+
+    <div class="faq-heading">
+
+      <div class="section-label">
+        FAQ
+      </div>
+
+      <h2 class="section-title">
+        Good to know
+      </h2>
+
+      <p>
+        Everything you need to know before your next visit.
+      </p>
+
+    </div>
+
+    <div class="faq-list">
+
+      @for (
+        faq of faqs;
+        track faq.question;
+        let i = $index
+      ) {
+
+        <div class="faq-item">
+
+          <button
+            class="faq-question"
+            (click)="toggle(i)"
+          >
+
+            <span>
+              {{ faq.question }}
+            </span>
+
+            <span>
+              {{ openIndex() === i ? '−' : '+' }}
+            </span>
+
+          </button>
+
+          @if (openIndex() === i) {
+
+            <div class="faq-answer">
+              {{ faq.answer }}
+            </div>
+
+          }
+
+        </div>
+
+      }
+
+    </div>
+
+  </div>
+
+</section>

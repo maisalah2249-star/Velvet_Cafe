@@ -1,0 +1,73 @@
+<section class="section reviews-section" id="reviews">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div class="section-label">
+        Reviews
+      </div>
+
+      <h2 class="section-title">
+        Loved by our guests
+      </h2>
+
+    </div>
+
+    <div class="review-wrapper">
+
+      <button
+        class="arrow"
+        (click)="previous()"
+      >
+        ←
+      </button>
+
+      <article class="review-card">
+
+        <div class="stars">
+          ★★★★★
+        </div>
+
+        <p>
+          "{{ reviews[currentIndex()].text }}"
+        </p>
+
+        <strong>
+          {{ reviews[currentIndex()].name }}
+        </strong>
+
+        <span>
+          Verified Customer
+        </span>
+
+      </article>
+
+      <button
+        class="arrow"
+        (click)="next()"
+      >
+        →
+      </button>
+
+    </div>
+
+    <div class="dots">
+
+      @for (
+        review of reviews;
+        track review.name;
+        let i = $index
+      ) {
+
+        <span
+          [class.active]="currentIndex() === i"
+        ></span>
+
+      }
+
+    </div>
+
+  </div>
+
+</section>

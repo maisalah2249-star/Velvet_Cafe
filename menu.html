@@ -1,0 +1,76 @@
+<section class="section menu-section" id="menu">
+
+  <div class="container">
+
+    <div class="section-header">
+
+      <div class="section-label">
+        Our Menu
+      </div>
+
+      <h2 class="section-title">
+        Crafted for every mood
+      </h2>
+
+      <p class="section-description">
+        From rich espresso to refreshing drinks and
+        freshly baked desserts, there is something for everyone.
+      </p>
+
+    </div>
+
+    <div class="categories">
+
+      @for (category of categories; track category) {
+
+        <button
+          [class.active]="selectedCategory() === category"
+          (click)="selectCategory(category)"
+        >
+          {{ category }}
+        </button>
+
+      }
+
+    </div>
+
+    <div class="menu-grid">
+
+      @for (item of filteredItems(); track item.name) {
+
+        <article class="menu-card">
+
+          <img
+            [src]="item.image"
+            [alt]="item.name"
+          >
+
+          <div class="menu-card-content">
+
+            <div class="menu-card-top">
+
+              <h3>
+                {{ item.name }}
+              </h3>
+
+              <span>
+                {{ item.price }} EGP
+              </span>
+
+            </div>
+
+            <p>
+              {{ item.description }}
+            </p>
+
+          </div>
+
+        </article>
+
+      }
+
+    </div>
+
+  </div>
+
+</section>
